@@ -1,1 +1,13 @@
-<p>role-selection works!</p>
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Select Your Role</mat-label>
+  <mat-select formControlName="role" 
+              [class.error]="formGroup.get('role')?.invalid && formGroup.get('role')?.touched">
+    <mat-option *ngFor="let roleInfo of roles" [value]="roleInfo.role">
+      {{ roleInfo.label }}
+    </mat-option>
+  </mat-select>
+  
+  <mat-error *ngIf="formGroup.get('role')?.invalid && formGroup.get('role')?.touched">
+    Please select your role
+  </mat-error>
+</mat-form-field>

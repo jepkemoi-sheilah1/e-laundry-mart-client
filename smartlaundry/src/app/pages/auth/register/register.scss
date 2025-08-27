@@ -1,0 +1,367 @@
+
+.register-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.1;
+  }
+}
+
+.register-wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out;
+  
+  .app-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    letter-spacing: -0.5px;
+  }
+  
+  .register-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+.register-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  animation: slideInUp 0.6s ease-out;
+  
+  mat-card-content {
+    padding: 40px;
+    
+    @media (max-width: 600px) {
+      padding: 32px 24px;
+    }
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column; /* Changed to column for better stacking */
+  gap: 16px; /* Added gap for spacing */
+  
+  .name-row,
+  .password-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    mat-form-field {
+      flex: 1;
+      min-width: 0; /* Prevents flex items from overflowing */
+      
+      @media (max-width: 600px) {
+        flex: none;
+        width: 100%;
+      }
+    }
+  }
+  
+.full-width {
+    width: 100%;
+    max-width: 100%; /* Ensure it does not exceed the container */
+}
+  
+  mat-form-field {
+    margin-bottom: 0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    
+    &.mat-focused:not(.mat-form-field-invalid) {
+      transform: translateY(-2px);
+      
+      .mat-mdc-form-field-outline-thick {
+        color: #2196F3;
+        opacity: 1;
+      }
+    }
+    
+    &.error {
+      .mat-mdc-form-field-outline {
+        color: #f44336;
+      }
+    }
+    
+    .mat-mdc-form-field-label {
+      color: #666;
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
+    
+    .mat-mdc-input-element {
+      color: #2d3748;
+      padding: 12px 0;
+      font-size: 16px;
+      font-weight: 400;
+      
+      &::placeholder {
+        color: #a0aec0;
+      }
+      
+      &:focus {
+        outline: none;
+      }
+    }
+    
+    .mat-mdc-form-field-outline {
+      color: #DDDDDD;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .mat-mdc-form-field-outline-thick {
+      color: #2196F3;
+      opacity: 0.7;
+    }
+    
+    mat-icon.mat-icon {
+      color: #a0aec0;
+      transition: color 0.3s ease;
+    }
+    
+    &:hover {
+      .mat-mdc-form-field-outline {
+        color: #cbd5e0;
+      }
+      
+      mat-icon.mat-icon {
+        color: #2196F3;
+      }
+    }
+    
+    button.mat-icon-button {
+      color: #a0aec0;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: #2196F3;
+        background: rgba(33, 150, 243, 0.1);
+      }
+    }
+  }
+}
+
+
+.terms-container {
+  margin: 24px 0;
+  
+  mat-checkbox {
+    display: block;
+    
+    &.error {
+      ::ng-deep {
+        .mat-checkbox-frame {
+          border-color: #f44336;
+        }
+      }
+    }
+    
+    ::ng-deep {
+      .mat-checkbox-label {
+        color: #4a5568;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      .mat-checkbox-inner-container {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+  
+  .terms-link {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #1976D2;
+      text-decoration: underline;
+    }
+  }
+  
+  .error-message {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-left: 28px;
+  }
+}
+
+.register-button {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    background: #cbd5e0;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  
+  .button-spinner {
+    margin-right: 12px;
+  }
+  
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 32px;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+  
+  p {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .link-button {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      text-decoration: underline;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 600px) {
+  .register-container {
+    padding: 16px;
+  }
+  
+  .register-header {
+    .app-title {
+      font-size: 2rem;
+    }
+  }
+  
+  .register-card {
+    mat-card-content {
+      padding: 24px;
+    }
+  }
+}
+
+// Material Design Overrides
+::ng-deep {
+  .mat-mdc-select-panel {
+    border-radius: 12px;
+    margin-top: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    max-height: 200px !important;
+    overflow-y: auto;
+    z-index: 1000 !important;
+    position: absolute !important;
+    
+    .mat-mdc-option {
+      min-height: 48px;
+      padding: 8px 16px;
+      
+      &:hover:not(.mdc-list-item--disabled) {
+        background: rgba(33, 150, 243, 0.08);
+      }
+      
+      &.mdc-list-item--selected {
+        background: rgba(33, 150, 243, 0.12);
+      }
+    }
+  }
+  
+  // Ensure the select dropdown appears above other elements
+  .cdk-overlay-pane {
+    z-index: 1001 !important;
+  }
+  
+  .mat-mdc-select {
+    .mat-mdc-select-trigger {
+      z-index: 1;
+    }
+  }
+  
+  .success-snackbar {
+    background: #4CAF50 !important;
+    color: white !important;
+  }
+  
+  .error-snackbar {
+    background: #f44336 !important;
+    color: white !important;
+  }
+}
